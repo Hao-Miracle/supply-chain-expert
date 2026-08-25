@@ -11,6 +11,7 @@ SKIP_FILES = {Path(__file__).resolve(), ROOT / "docs" / "SECURITY_AND_DATA.md"}
 FORBIDDEN_NAMES = {".env", "auth.json", "config.yaml", "state.db", "response_store.db"}
 FORBIDDEN_DIRS = {"raw", "private", "logs", "sessions", "memories", "outputs"}
 FORBIDDEN_SUFFIXES = {".doc", ".docx", ".pdf", ".xls", ".xlsx", ".db", ".wal"}
+APPROVED_PUBLIC_EMAILS = {"miracle.hao2023@gmail.com"}
 CONTENT_RULES = {
     "credential assignment": re.compile(r"(?i)(?:api[_-]?key|access[_-]?token|refresh[_-]?token|password|passwd|secret)\s*[:=]\s*['\"][^'\"]{6,}"),
     "mainland mobile number": re.compile(r"(?<!\d)1[3-9]\d{9}(?!\d)"),
@@ -37,7 +38,11 @@ def main() -> int:
             findings.append(f"unreviewed binary: {relative}")
             continue
         for label, pattern in CONTENT_RULES.items():
-            if pattern.search(text):
+            scanned_text = text
+            if label == "email address":
+                for approved_email in APPROVED_PUBLIC_EMAILS:
+                    scanned_text = scanned_text.replace(approved_email, "[approved-public-email]")
+            if pattern.search(scanned_text):
                 findings.append(f"{label}: {relative}")
 
     if findings:

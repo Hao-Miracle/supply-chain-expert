@@ -177,6 +177,10 @@ python scripts/privacy_scan.py
 PYTHONPATH=src python -m unittest discover -s tests -v
 ```
 
+## Open source and enterprise services
+
+The core remains Apache-2.0: individuals and organizations may use it commercially under the license. Private deployment, organization-specific taxonomies, procurement knowledge bases, integrations, training, maintenance, and service levels are available as [enterprise services](COMMERCIAL.md). See the [trademark and brand policy](TRADEMARKS.md) for official-identity rules and the [enterprise services agreement template](docs/企业商业服务协议模板.md) for contract preparation.
+
 ## Build with us
 
 Issues and pull requests are welcome across procurement workflows, industry taxonomies, data structures, and agent collaboration.

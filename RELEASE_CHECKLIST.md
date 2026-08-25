@@ -15,6 +15,8 @@
 - [x] External RFQ sanitization and market-reference-only rules have executable tests.
 - [x] `distribution.yaml`, `SOUL.md`, and bundled Skills form a native Hermes Profile Distribution.
 - [x] Deployment commands were checked against the installed Hermes CLI and official distribution documentation.
+- [x] Open-source rights and paid enterprise services are clearly separated.
+- [x] Commercial-service boundaries, brand usage, and a lawyer-review contract template are documented.
 
 ## Required immediately before publishing
 

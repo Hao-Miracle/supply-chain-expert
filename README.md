@@ -177,6 +177,10 @@ python scripts/privacy_scan.py
 PYTHONPATH=src python -m unittest discover -s tests -v
 ```
 
+## 开源与企业服务
+
+核心代码继续采用 Apache-2.0，个人与企业均可依许可证自由使用和商用。需要私有化部署、企业分类体系、采购知识库、系统集成、培训、维护或服务级别保障时，可选择[企业商业服务](COMMERCIAL.md)。品牌和官方身份的使用规则见[商标与品牌政策](TRADEMARKS.md)，正式项目可参考[《企业商业服务协议模板》](docs/企业商业服务协议模板.md)磋商签约。
+
 ## Build with us
 
 欢迎围绕采购工作流、行业分类、数据结构与 Agent 协作提交 Issue 和 Pull Request。
