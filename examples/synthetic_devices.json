@@ -1,0 +1,12 @@
+[
+  {"device_name":"24口千兆交换机","specification":"24GE+4SFP"},
+  {"device_name":"网络硬盘录像机","specification":"32路 8盘位"},
+  {"device_name":"门禁磁力锁","specification":"断电开锁"},
+  {"device_name":"机架式服务器","specification":"双电源"},
+  {"device_name":"室内半球摄像机","specification":"网络型"},
+  {"device_name":"六类非屏蔽网线","specification":"305米"},
+  {"device_name":"标准网络机柜","specification":"42U"},
+  {"device_name":"企业级防火墙","specification":"千兆"},
+  {"device_name":"温度传感器","specification":"室内型"},
+  {"device_name":"智能电能表","specification":"三相"}
+]

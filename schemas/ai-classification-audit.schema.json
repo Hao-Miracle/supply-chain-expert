@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AI Procurement Classification Audit Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "sample_record_id", "session_id", "task_id", "run_timestamp", "run_channel",
+    "original_device_name", "original_specification", "normalized_device_name",
+    "normalized_specification", "ai_system_category", "ai_sub_category",
+    "ai_category_code", "ai_confidence", "confidence_label", "evidence_summary",
+    "alternative_categories", "has_candidate_conflict", "needs_human_review",
+    "human_final_category", "human_corrected", "gate1_status",
+    "knowledge_base_written", "engine_version", "record_sha256"
+  ],
+  "properties": {
+    "sample_record_id": {"type": "string"},
+    "session_id": {"type": "string"},
+    "task_id": {"type": "string"},
+    "run_timestamp": {"type": "string", "format": "date-time"},
+    "run_channel": {"type": "string"},
+    "original_device_name": {"type": "string"},
+    "original_specification": {"type": "string"},
+    "normalized_device_name": {"type": "string"},
+    "normalized_specification": {"type": "string"},
+    "ai_system_category": {"type": "string"},
+    "ai_sub_category": {"type": "string"},
+    "ai_category_code": {"type": "string"},
+    "ai_confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "confidence_label": {"type": "string"},
+    "evidence_summary": {"type": "array", "items": {"type": "string"}},
+    "alternative_categories": {"type": "array", "items": {"type": "string"}},
+    "has_candidate_conflict": {"type": "boolean"},
+    "needs_human_review": {"type": "boolean"},
+    "human_final_category": {"type": ["string", "null"]},
+    "human_corrected": {"type": ["boolean", "null"]},
+    "gate1_status": {"enum": ["pending", "confirmed", "rejected"]},
+    "knowledge_base_written": {"type": "boolean"},
+    "engine_version": {"type": "string"},
+    "record_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  }
+}
