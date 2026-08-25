@@ -33,6 +33,22 @@
   </tr>
 </table>
 
+## 把时间还给采购员
+
+供应链专家优先压缩清单整理、分类标准化、询价表生成、报价拉齐、过程追踪和项目交接中的重复劳动。采购员仍负责四个 Gate，但不必反复搬运字段、翻找上下文或从零整理比较表。
+
+以 **200 条物料、5 家候选供应商** 的中等规模工程采购为规划样例，在数据模板稳定、人工 Gate 正常执行的前提下：
+
+| 价值指标 | 规划参考区间 |
+|---|---:|
+| 端到端人工操作时间 | 减少 **25%–45%** |
+| 清单整理与分类标准化 | 提速 **1.5–2.5×** |
+| 询价准备与报价拉齐 | 提速 **2–3×** |
+| 状态汇总与跨人交接 | 提速 **2–4×** |
+| 单项目人工工时 | 约节省 **20–30 小时** |
+
+这些数字是容量规划基线，不是对所有项目的效果承诺。真实收益取决于清单质量、供应商数量、历史数据完整度、异常比例和人工复核深度。项目内置可复核的测量口径：以相同范围下的人工基线工时与 Agent 辅助工时对比，并单独记录返工时间和 Gate 审核时间。计算方法与试点验收表见 [`docs/VALUE_MODEL.md`](docs/VALUE_MODEL.md)。
+
 ## 一个核心，四种能力
 
 <table>
@@ -150,7 +166,7 @@ external_rfq = flow.prepare_external_rfq({
 | Project Memory | 跨会话恢复项目状态、决定、文件与下一步 |
 | Python Tools | 执行分类、脱敏、校验等确定性业务动作 |
 
-流程契约位于 [`docs/WORKFLOW.md`](docs/WORKFLOW.md)，部署说明位于 [`docs/HERMES_DEPLOYMENT.md`](docs/HERMES_DEPLOYMENT.md)，状态结构位于 [`schemas/procurement-workflow.schema.json`](schemas/procurement-workflow.schema.json)。
+流程契约位于 [`docs/WORKFLOW.md`](docs/WORKFLOW.md)，价值测量位于 [`docs/VALUE_MODEL.md`](docs/VALUE_MODEL.md)，部署说明位于 [`docs/HERMES_DEPLOYMENT.md`](docs/HERMES_DEPLOYMENT.md)，状态结构位于 [`schemas/procurement-workflow.schema.json`](schemas/procurement-workflow.schema.json)。
 
 ## 数据边界
 

@@ -33,6 +33,22 @@ Supply Chain Expert connects ten procurement stages into one project line. Every
   </tr>
 </table>
 
+## Give purchasing teams their time back
+
+Supply Chain Expert targets repetitive work in list preparation, classification, RFQ generation, quote normalization, progress reporting, and handoffs. Purchasers still own all four Gates, without repeatedly moving fields, reconstructing context, or rebuilding comparison sheets.
+
+For planning a mid-sized engineering procurement project with **200 line items and 5 candidate suppliers**, assuming stable input templates and normal human review:
+
+| Value metric | Planning range |
+|---|---:|
+| End-to-end manual touch time | **25%–45% lower** |
+| List preparation and classification | **1.5–2.5× faster** |
+| RFQ preparation and quote normalization | **2–3× faster** |
+| Status reporting and handoff | **2–4× faster** |
+| Manual effort per project | about **20–30 hours saved** |
+
+These figures are capacity-planning baselines, not guaranteed outcomes. Actual gains depend on input quality, supplier count, historical-data coverage, exception rates, and review depth. The project provides an auditable measurement method: compare manual-baseline hours with agent-assisted hours for the same scope, while tracking rework and Gate review separately. See [`docs/VALUE_MODEL.md`](docs/VALUE_MODEL.md) for formulas and a pilot scorecard.
+
 ## One core, four capabilities
 
 <table>
@@ -150,7 +166,7 @@ Market prices enter the workflow as verification references with specification, 
 | Project Memory | restores project state, decisions, files, and next action across sessions |
 | Python Tools | performs deterministic classification, sanitization, and validation |
 
-The workflow contract lives in [`docs/WORKFLOW.md`](docs/WORKFLOW.md), deployment in [`docs/HERMES_DEPLOYMENT.md`](docs/HERMES_DEPLOYMENT.md), and state in [`schemas/procurement-workflow.schema.json`](schemas/procurement-workflow.schema.json).
+The workflow contract lives in [`docs/WORKFLOW.md`](docs/WORKFLOW.md), value measurement in [`docs/VALUE_MODEL.md`](docs/VALUE_MODEL.md), deployment in [`docs/HERMES_DEPLOYMENT.md`](docs/HERMES_DEPLOYMENT.md), and state in [`schemas/procurement-workflow.schema.json`](schemas/procurement-workflow.schema.json).
 
 ## Data boundary
 
