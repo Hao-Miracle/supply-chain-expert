@@ -11,6 +11,8 @@
 - [x] The 24-field audit schema is internally consistent.
 - [x] The staged Git file list contains source, documentation and synthetic examples only.
 - [x] Complete Chinese and English README files are provided and cross-linked.
+- [x] The public workflow covers all ten procurement stages and four human Gates.
+- [x] External RFQ sanitization and market-reference-only rules have executable tests.
 
 ## Required immediately before publishing
 

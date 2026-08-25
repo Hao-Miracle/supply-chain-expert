@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/schemas/procurement-workflow.schema.json",
+  "title": "Supply Chain Expert workflow snapshot",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "project_id",
+    "project_name",
+    "current_stage",
+    "stages",
+    "gates",
+    "events",
+    "market_references",
+    "erp_in_scope"
+  ],
+  "properties": {
+    "project_id": {"type": "string", "minLength": 1},
+    "project_name": {"type": "string"},
+    "current_stage": {"$ref": "#/$defs/stage"},
+    "stages": {"type": "array", "items": {"$ref": "#/$defs/stage"}, "minItems": 10, "maxItems": 10},
+    "gates": {
+      "type": "object",
+      "required": ["gate1", "gate2", "gate3", "gate4"],
+      "properties": {
+        "gate1": {"$ref": "#/$defs/gate"},
+        "gate2": {"$ref": "#/$defs/gate"},
+        "gate3": {"$ref": "#/$defs/gate"},
+        "gate4": {"$ref": "#/$defs/gate"}
+      }
+    },
+    "events": {"type": "array", "items": {"$ref": "#/$defs/event"}},
+    "market_references": {"type": "array", "items": {"type": "object"}},
+    "erp_in_scope": {"const": false}
+  },
+  "$defs": {
+    "stage": {
+      "enum": [
+        "requirements",
+        "classification_standardization",
+        "cost_estimation",
+        "supplier_matching",
+        "rfq_comparison",
+        "negotiation_award",
+        "contract_order",
+        "logistics",
+        "acceptance",
+        "supplier_evaluation_feedback"
+      ]
+    },
+    "gate": {
+      "type": "object",
+      "required": ["gate", "status", "reviewer", "note", "decided_at"],
+      "properties": {
+        "gate": {"enum": ["gate1", "gate2", "gate3", "gate4"]},
+        "status": {"enum": ["pending", "approved"]},
+        "reviewer": {"type": "string"},
+        "note": {"type": "string"},
+        "decided_at": {"type": "string"}
+      }
+    },
+    "event": {
+      "type": "object",
+      "required": ["stage", "action", "actor", "summary", "data", "created_at"],
+      "properties": {
+        "stage": {"$ref": "#/$defs/stage"},
+        "action": {"type": "string"},
+        "actor": {"type": "string"},
+        "summary": {"type": "string"},
+        "data": {"type": "object"},
+        "created_at": {"type": "string"}
+      }
+    }
+  }
+}

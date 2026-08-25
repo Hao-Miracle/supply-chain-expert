@@ -1,0 +1,19 @@
+{
+  "project_id": "DEMO-001",
+  "project_name": "Synthetic campus network upgrade",
+  "current_stage": "classification_standardization",
+  "gate1_status": "pending",
+  "items": [
+    {
+      "line_id": "DEMO-L001",
+      "raw_name": "24-port Gigabit Ethernet switch",
+      "normalized_name": "managed access switch",
+      "quantity": 2,
+      "unit": "unit",
+      "classification_status": "human_review_required"
+    }
+  ],
+  "market_reference_policy": "verification_only",
+  "erp_in_scope": false,
+  "notice": "This record is fully synthetic and unrelated to any real organization or transaction."
+}

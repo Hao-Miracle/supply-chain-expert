@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "supply-chain-expert"
-version = "0.1.0"
-description = "An explainable procurement agent, starting with equipment classification and standardization"
+version = "0.2.0"
+description = "A privacy-conscious and explainable procurement workflow agent"
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "Apache-2.0"}
@@ -13,6 +13,7 @@ authors = [{name = "Project Maintainers"}]
 
 [project.scripts]
 procurement-classify = "procurement_classifier.cli:main"
+supply-chain-expert = "supply_chain_expert.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
