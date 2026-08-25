@@ -1,4 +1,5 @@
 .env
+.sce/
 .env.*
 !.env.example
 .privacy-denylist

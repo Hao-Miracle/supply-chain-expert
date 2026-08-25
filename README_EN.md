@@ -9,6 +9,7 @@
 <h3 align="center">Make procurement continuous, clear, and compounding.</h3>
 
 <p align="center">
+  <strong>A native procurement profile for Hermes Agent</strong><br/>
   One agent stays with the project from requirement intake to supplier evaluation.<br/>
   AI handles complexity. People own the decisions.
 </p>
@@ -57,23 +58,40 @@ Supply Chain Expert connects ten procurement stages into one project line. Every
   </tr>
 </table>
 
-## Start now
+## Deploy as a Hermes Agent
 
 ```bash
-git clone https://github.com/Hao-Miracle/supply-chain-expert.git
-cd supply-chain-expert
+# 1. Install Hermes Agent
+curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash
+
+# 2. Install the complete procurement-agent profile
+hermes profile install \
+  github.com/Hao-Miracle/supply-chain-expert \
+  --alias
+
+# 3. Configure and start
+supply-chain-expert setup
+supply-chain-expert chat
+```
+
+Then talk to it directly:
+
+```text
+Create a new engineering-procurement project, import the requirement list,
+and tell me what is still missing before Gate-1.
+```
+
+The installation brings in an isolated Profile, `SOUL.md`, the end-to-end procurement Skill, and the equipment-classification Skill together. Model configuration, sessions, memory, and credentials stay in the user's own Hermes environment. See [`docs/HERMES_DEPLOYMENT.md`](docs/HERMES_DEPLOYMENT.md) for deployment, updates, and messaging-platform setup.
+
+### Optional deterministic business tools
+
+Python sits beneath the agent as a rule and validation layer; it is not the product entry point. Install it when the agent needs classification, RFQ sanitization, or workflow-state validation:
+
+```bash
 python -m pip install -e .
 ```
 
-Create your first procurement workflow:
-
-```bash
-supply-chain-expert \
-  --project-id "DEMO-001" \
-  --project-name "Campus network upgrade"
-```
-
-Or use Python:
+Hermes can call these capabilities, and they can also be embedded directly in Python:
 
 ```python
 from supply_chain_expert import ProcurementWorkflow
@@ -109,7 +127,7 @@ external_rfq = flow.prepare_external_rfq({
 
 Market prices enter the workflow as verification references with specification, brand, unit, tax, freight, region, source, and collection date. External RFQs retain only information intended for external sharing.
 
-## Ready for agents
+## Agent composition
 
 <table>
   <tr>
@@ -124,7 +142,15 @@ Market prices enter the workflow as verification references with specification, 
   </tr>
 </table>
 
-The workflow contract lives in [`docs/WORKFLOW.md`](docs/WORKFLOW.md), with state defined in [`schemas/procurement-workflow.schema.json`](schemas/procurement-workflow.schema.json).
+| Layer | Role |
+|---|---|
+| Hermes Profile | isolates model, tools, sessions, skills, and memory |
+| `AGENTS.md` | loads procurement workflow and operating rules every session |
+| Procurement Skill | drives the ten stages and four Gates |
+| Project Memory | restores project state, decisions, files, and next action across sessions |
+| Python Tools | performs deterministic classification, sanitization, and validation |
+
+The workflow contract lives in [`docs/WORKFLOW.md`](docs/WORKFLOW.md), deployment in [`docs/HERMES_DEPLOYMENT.md`](docs/HERMES_DEPLOYMENT.md), and state in [`schemas/procurement-workflow.schema.json`](schemas/procurement-workflow.schema.json).
 
 ## Data boundary
 

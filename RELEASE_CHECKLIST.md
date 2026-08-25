@@ -13,6 +13,8 @@
 - [x] Complete Chinese and English README files are provided and cross-linked.
 - [x] The public workflow covers all ten procurement stages and four human Gates.
 - [x] External RFQ sanitization and market-reference-only rules have executable tests.
+- [x] `distribution.yaml`, `SOUL.md`, and bundled Skills form a native Hermes Profile Distribution.
+- [x] Deployment commands were checked against the installed Hermes CLI and official distribution documentation.
 
 ## Required immediately before publishing
 

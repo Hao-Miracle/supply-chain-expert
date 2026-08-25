@@ -9,6 +9,7 @@
 <h3 align="center">让采购成为一条连续、清晰、可积累的智能工作流。</h3>
 
 <p align="center">
+  <strong>Hermes Agent 原生采购 Profile</strong><br/>
   从需求清单到供应商评价，一个 Agent 贯穿项目始终。<br/>
   AI 处理复杂信息，人掌握关键决定。
 </p>
@@ -57,23 +58,40 @@
   </tr>
 </table>
 
-## 现在开始
+## 部署为 Hermes Agent
 
 ```bash
-git clone https://github.com/Hao-Miracle/supply-chain-expert.git
-cd supply-chain-expert
+# 1. 安装 Hermes Agent
+curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash
+
+# 2. 一键安装完整采购Agent Profile
+hermes profile install \
+  github.com/Hao-Miracle/supply-chain-expert \
+  --alias
+
+# 3. 配置并启动
+supply-chain-expert setup
+supply-chain-expert chat
+```
+
+现在直接和它对话：
+
+```text
+创建一个新的工程采购项目，导入需求清单，
+并告诉我Gate-1之前还缺哪些信息。
+```
+
+安装命令会一次装入专属 Profile、`SOUL.md`、采购全流程 Skill 和设备分类 Skill。模型配置、会话、记忆与凭据保留在使用者自己的 Hermes 环境中。完整部署、更新与消息平台接入见 [`docs/HERMES_DEPLOYMENT.md`](docs/HERMES_DEPLOYMENT.md)。
+
+### 可选：安装确定性业务工具
+
+Python 是 Agent 下层的规则与校验工具，不是产品入口。需要设备分类、询价字段过滤或流程状态校验时安装：
+
+```bash
 python -m pip install -e .
 ```
 
-创建第一个采购工作流：
-
-```bash
-supply-chain-expert \
-  --project-id "DEMO-001" \
-  --project-name "园区网络升级"
-```
-
-或者在 Python 中使用：
+Hermes 可以调用这些能力，也可以直接在 Python 中集成：
 
 ```python
 from supply_chain_expert import ProcurementWorkflow
@@ -109,7 +127,7 @@ external_rfq = flow.prepare_external_rfq({
 
 市场价格始终以“核验参考”进入流程，并携带规格、品牌、单位、税率、运费、地区、来源与采集日期。对外询价则只保留适合对外共享的信息。
 
-## 为 Agent 准备
+## Agent 组成
 
 <table>
   <tr>
@@ -124,7 +142,15 @@ external_rfq = flow.prepare_external_rfq({
   </tr>
 </table>
 
-流程契约位于 [`docs/WORKFLOW.md`](docs/WORKFLOW.md)，状态结构位于 [`schemas/procurement-workflow.schema.json`](schemas/procurement-workflow.schema.json)。
+| 层 | 作用 |
+|---|---|
+| Hermes Profile | 隔离模型、工具、会话、技能与记忆 |
+| `AGENTS.md` | 每次会话自动加载采购流程和执行规则 |
+| Procurement Skill | 驱动十阶段采购工作流与四个Gate |
+| Project Memory | 跨会话恢复项目状态、决定、文件与下一步 |
+| Python Tools | 执行分类、脱敏、校验等确定性业务动作 |
+
+流程契约位于 [`docs/WORKFLOW.md`](docs/WORKFLOW.md)，部署说明位于 [`docs/HERMES_DEPLOYMENT.md`](docs/HERMES_DEPLOYMENT.md)，状态结构位于 [`schemas/procurement-workflow.schema.json`](schemas/procurement-workflow.schema.json)。
 
 ## 数据边界
 

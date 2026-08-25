@@ -1,6 +1,13 @@
 ---
 name: supply-chain-expert
-description: Run an explainable engineering-procurement workflow from requirement intake through classification, costing, supplier work, sourcing, contracting, logistics, acceptance, evaluation, and feedback. Use for procurement planning or execution that must preserve human approval gates and data boundaries.
+description: Use when running an engineering-procurement project from requirement intake through classification, costing, supplier work, sourcing, contracting, logistics, acceptance, evaluation, and feedback with human approval gates and durable handoffs.
+version: 1.0.0
+author: Supply Chain Expert
+license: Apache-2.0
+metadata:
+  hermes:
+    tags: [procurement, workflow, sourcing, supply-chain, human-in-the-loop]
+    related_skills: [procurement-device-classification]
 ---
 
 # Supply Chain Expert
@@ -39,4 +46,4 @@ Do not represent an AI recommendation as an approved decision. Do not write unco
 - Use the minimum business data needed. Do not expose credentials, runtime profiles, logs, conversations, real contacts, contracts, bank data, private knowledge, or registration evidence.
 - Describe logistics automation and image OCR as assisted or unverified unless their real integrations have been validated.
 
-Read [references/workflow-contract.md](references/workflow-contract.md) when determining stage transitions, outputs, or Gate ownership. Use the repository's device-classification component for the classification stage.
+When the full repository is available, read [references/workflow-contract.md](references/workflow-contract.md) for its extended output contract. Use the repository's device-classification component for the classification stage when installed.

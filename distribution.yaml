@@ -1,0 +1,12 @@
+name: supply-chain-expert
+version: 0.2.0
+description: "An explainable intelligent procurement agent for engineering and IT integration projects"
+hermes_requires: ">=0.12.0"
+author: "Supply Chain Expert Maintainers"
+license: "Apache-2.0"
+
+distribution_owned:
+  - SOUL.md
+  - skills/supply-chain-expert/
+  - skills/procurement-device-classification/
+  - distribution.yaml
