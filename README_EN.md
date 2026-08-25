@@ -1,70 +1,63 @@
-<div align="center">
+<p align="center">
   <img src="assets/hero.svg" alt="Supply Chain Expert" width="100%" />
-</div>
+</p>
 
-<div align="center">
+<p align="center">
+  <a href="README.md">简体中文</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="README_EN.md">English</a>
+</p>
 
-[简体中文](README.md) · [English](README_EN.md)
+<h3 align="center">Make procurement continuous, clear, and compounding.</h3>
 
-[![Python](https://img.shields.io/badge/Python-3.10%2B-2563EB?style=flat-square)](https://www.python.org/)
-[![License](https://img.shields.io/badge/License-Apache--2.0-22C55E?style=flat-square)](LICENSE)
-![Tests](https://img.shields.io/badge/Tests-8%20passing-22C55E?style=flat-square)
-![Privacy](https://img.shields.io/badge/Data-Synthetic%20only-7C3AED?style=flat-square)
-![Human in the loop](https://img.shields.io/badge/Decision-Human%20in%20the%20loop-F59E0B?style=flat-square)
+<p align="center">
+  One agent stays with the project from requirement intake to supplier evaluation.<br/>
+  AI handles complexity. People own the decisions.
+</p>
 
-**Put the workflow in the agent. Keep the decisions with people.**
+<br/>
 
-An explainable procurement framework for engineering and IT integration projects.
+## From list to outcome
 
-</div>
+<p align="center">
+  <img src="assets/workflow.svg" alt="The complete intelligent procurement workflow" width="100%" />
+</p>
 
-## Why Supply Chain Expert?
+Supply Chain Expert connects ten procurement stages into one project line. Every action retains its stage, evidence, state, and handoff. Four quality Gates place human confirmation exactly where it matters.
 
-Procurement is not a single classification or price comparison. It is a continuous decision chain across requirements, pricing, suppliers, contracts, logistics, and acceptance.
+<table>
+  <tr>
+    <td width="25%"><strong>Gate 01</strong><br/><sub>List & classification</sub></td>
+    <td width="25%"><strong>Gate 02</strong><br/><sub>Award & contract</sub></td>
+    <td width="25%"><strong>Gate 03</strong><br/><sub>Delivery & acceptance</sub></td>
+    <td width="25%"><strong>Gate 04</strong><br/><sub>Evaluation & closeout</sub></td>
+  </tr>
+</table>
 
-Supply Chain Expert turns that chain into an auditable agent workflow. AI prepares, checks, and recommends; accountable purchasers retain control through four explicit Gates. Every step keeps its stage, evidence, status, and handoff, so the project can survive interrupted sessions.
+## One core, four capabilities
 
-## One complete procurement loop
+<table>
+  <tr>
+    <td width="50%">
+      <h3>01 · Workflow</h3>
+      Ten-stage procurement orchestration with continuous project state and recoverable handoffs.
+    </td>
+    <td width="50%">
+      <h3>02 · Intelligence</h3>
+      Classification, standardization, cost analysis, supplier matching, and commercial guidance in one context.
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <h3>03 · Control</h3>
+      Four Gates connect AI recommendations with accountable purchaser confirmation.
+    </td>
+    <td width="50%">
+      <h3>04 · Memory</h3>
+      Project facts, confirmed outcomes, and reusable lessons flow back into procurement knowledge.
+    </td>
+  </tr>
+</table>
 
-```mermaid
-flowchart LR
-    A[Requirements] --> B[Classification & standardization]
-    B --> G1{{Gate-1}}
-    G1 --> C[Cost estimation]
-    C --> D[Supplier matching]
-    D --> E[RFQ & comparison]
-    E --> F[Negotiation & award]
-    F --> G2{{Gate-2}}
-    G2 --> G[Contract or order]
-    G --> H[Logistics]
-    H --> I[Acceptance]
-    I --> G3{{Gate-3}}
-    G3 --> J[Evaluation & feedback]
-    J --> G4{{Gate-4}}
-```
-
-| Gate | Purchaser confirms | AI must not do |
-|---|---|---|
-| Gate-1 | item, category, specification, quantity, and RFQ list | treat a classification suggestion as approved |
-| Gate-2 | supplier, price, tax, delivery, award, and contract/order | auto-award or sign a contract |
-| Gate-3 | delivered model, quantity, condition, and exceptions | declare final acceptance automatically |
-| Gate-4 | supplier evaluation, final facts, open items, and closeout | close a project or confirm knowledge automatically |
-
-## What is included today?
-
-| Capability | Public status | Notes |
-|---|---:|---|
-| Ten-stage workflow orchestration | ✅ Runnable | stages cannot silently skip or move backwards |
-| Four human quality Gates | ✅ Runnable | Gates cannot be approved early and require a reviewer |
-| Equipment classification | ✅ Reference implementation | category, code, confidence, evidence, and conflicts |
-| External RFQ sanitization | ✅ Runnable | recursively removes internal cost, targets, and competing quotes |
-| Market-reference policy | ✅ Runnable | verification-only and never a pricing authority |
-| Cost, supplier, comparison, contract | 🧩 Integration contracts | run after connecting private organizational data |
-| Logistics and acceptance OCR | 🧪 Unverified extensions | never presented as automated before real validation |
-
-> ERP integration, ERP receiving, sales-order matching, purchase-sales matching, and finance pre-posting are outside this project.
-
-## Run in 60 seconds
+## Start now
 
 ```bash
 git clone https://github.com/Hao-Miracle/supply-chain-expert.git
@@ -72,28 +65,20 @@ cd supply-chain-expert
 python -m pip install -e .
 ```
 
-Start a workflow without real business data:
+Create your first procurement workflow:
 
 ```bash
 supply-chain-expert \
   --project-id "DEMO-001" \
-  --project-name "Synthetic demonstration"
+  --project-name "Campus network upgrade"
 ```
 
-Try the equipment-classification component:
-
-```bash
-procurement-classify \
-  --name "24-port Gigabit Ethernet switch" \
-  --spec "24GE+4SFP"
-```
-
-## Control the workflow in code
+Or use Python:
 
 ```python
 from supply_chain_expert import ProcurementWorkflow
 
-flow = ProcurementWorkflow("DEMO-001", "Synthetic demonstration")
+flow = ProcurementWorkflow("DEMO-001", "Campus network upgrade")
 
 flow.record("requirements", "import", "Requirement list imported")
 flow.record(
@@ -102,70 +87,58 @@ flow.record(
     "Classification proposals prepared",
 )
 
-# A purchaser must approve critical transitions.
 flow.approve_gate("gate1", reviewer="purchaser")
-
-# Internal commercial fields are removed recursively before an RFQ leaves.
 external_rfq = flow.prepare_external_rfq({
-    "item": "synthetic equipment",
+    "item": "24-port Gigabit Ethernet switch",
     "quantity": 2,
     "internal_cost": 100,
-    "target_price": 120,
 })
 ```
 
-`external_rfq` contains only fields safe for external issue. It cannot be produced before Gate-1 approval.
+## The procurement intelligence foundation
 
-## Market prices verify; they do not decide
+| | Capability | Output |
+|---:|---|---|
+| 01 | Requirements | structured items, missing information, project context |
+| 02 | Classification | category, code, normalized specification, confidence, evidence |
+| 03 | Cost & market verification | cost analysis, price anomalies, verification evidence |
+| 04 | Supplier & sourcing | supplier candidates, RFQ list, comparable quotations |
+| 05 | Negotiation & award | negotiation points, consolidated analysis, award recommendation |
+| 06 | Contract & delivery | contract/order draft, logistics state, delivery information |
+| 07 | Acceptance & feedback | acceptance record, supplier evaluation, procurement knowledge |
 
-Every external price reference must include:
+Market prices enter the workflow as verification references with specification, brand, unit, tax, freight, region, source, and collection date. External RFQs retain only information intended for external sharing.
 
-`model/specification` · `brand` · `unit` · `tax` · `freight` · `region` · `source` · `collection date`
+## Ready for agents
 
-Incomplete or stale records require human verification. A market reference cannot directly become the cost, target, transaction price, or automatic award basis.
+<table>
+  <tr>
+    <td width="50%">
+      <a href="skills/supply-chain-expert/SKILL.md"><strong>supply-chain-expert</strong></a><br/>
+      <sub>End-to-end procurement, quality Gates, commercial rules, and handoffs</sub>
+    </td>
+    <td width="50%">
+      <a href="skills/procurement-device-classification/SKILL.md"><strong>procurement-device-classification</strong></a><br/>
+      <sub>Explainable engineering-equipment classification and standardization</sub>
+    </td>
+  </tr>
+</table>
 
-## Built for agents
+The workflow contract lives in [`docs/WORKFLOW.md`](docs/WORKFLOW.md), with state defined in [`schemas/procurement-workflow.schema.json`](schemas/procurement-workflow.schema.json).
 
-The repository ships two reusable Skills:
+## Data boundary
 
-- [`supply-chain-expert`](skills/supply-chain-expert/SKILL.md): end-to-end workflow, Gates, commercial safety, and handoffs.
-- [`procurement-device-classification`](skills/procurement-device-classification/SKILL.md): equipment-classification sub-capability.
-
-See [`docs/WORKFLOW.md`](docs/WORKFLOW.md) for the workflow contract and [`schemas/procurement-workflow.schema.json`](schemas/procurement-workflow.schema.json) for the state schema.
-
-## Privacy is part of the architecture
-
-This repository contains generic code, public documentation, and fully synthetic demonstrations. It does not include:
-
-- real procurement lists, suppliers, customers, quotations, costs, or contracts;
-- contact, banking, identity, or credential data;
-- agent profiles, environment values, sessions, logs, memories, or runtime databases;
-- private correction knowledge or data-IP registration evidence.
-
-Run the release checks:
+The public repository is composed of generic code, public documentation, and synthetic examples. Organizational procurement data, runtime configuration, and private knowledge stay in the user's own environment. Privacy scanning is built in, together with commercial-field filtering for external RFQs.
 
 ```bash
 python scripts/privacy_scan.py
 PYTHONPATH=src python -m unittest discover -s tests -v
 ```
 
-Automated scanning is necessary but not sufficient; the complete Git change set still requires human review. See [`docs/SECURITY_AND_DATA.md`](docs/SECURITY_AND_DATA.md).
+## Build with us
 
-## Repository map
+Issues and pull requests are welcome across procurement workflows, industry taxonomies, data structures, and agent collaboration.
 
-```text
-src/supply_chain_expert/        workflow, Gates, and safeguards
-src/procurement_classifier/     explainable classification component
-skills/                         Agent Skills
-schemas/                        workflow and AI audit schemas
-examples/                       fully synthetic demonstrations
-tests/                          workflow, safety, and classification tests
-```
-
-## Contributing
-
-Issues and pull requests are welcome. Use only synthetic or lawfully public data. Never paste real quotations, contracts, contacts, account details, or private screenshots into an issue, test fixture, or commit.
-
-## License
-
-[Apache License 2.0](LICENSE)
+<p align="center">
+  <sub>Apache-2.0 · Built for explainable procurement intelligence.</sub>
+</p>

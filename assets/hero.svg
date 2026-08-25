@@ -1,21 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="440" viewBox="0 0 1280 440" role="img" aria-labelledby="title desc">
   <title id="title">Supply Chain Expert</title>
-  <desc id="desc">A minimal dark banner showing an explainable procurement workflow.</desc>
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#090B12"/><stop offset="1" stop-color="#161A2B"/></linearGradient>
-    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7C3AED"/><stop offset="1" stop-color="#22D3EE"/></linearGradient>
-    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="7" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-  </defs>
-  <rect width="1200" height="360" rx="24" fill="url(#bg)"/>
-  <circle cx="1040" cy="50" r="230" fill="#7C3AED" opacity=".08"/><circle cx="1140" cy="310" r="180" fill="#22D3EE" opacity=".07"/>
-  <text x="72" y="105" fill="#94A3B8" font-family="Arial, sans-serif" font-size="18" letter-spacing="4">OPEN PROCUREMENT AGENT</text>
-  <text x="72" y="175" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="54" font-weight="700">供应链专家</text>
-  <text x="72" y="222" fill="#CBD5E1" font-family="Arial, sans-serif" font-size="25">Supply Chain Expert</text>
-  <text x="72" y="275" fill="#94A3B8" font-family="Arial, sans-serif" font-size="18">Explainable workflow. Human decisions. Private data stays private.</text>
-  <g transform="translate(720 130)">
-    <path d="M18 50 H378" stroke="url(#accent)" stroke-width="3" opacity=".7"/>
-    <g fill="#111827" stroke="#64748B" stroke-width="2"><circle cx="18" cy="50" r="16"/><circle cx="108" cy="50" r="16"/><circle cx="198" cy="50" r="16"/><circle cx="288" cy="50" r="16"/><circle cx="378" cy="50" r="16"/></g>
-    <g fill="#22D3EE" filter="url(#glow)"><circle cx="18" cy="50" r="5"/><circle cx="108" cy="50" r="5"/><circle cx="198" cy="50" r="5"/><circle cx="288" cy="50" r="5"/><circle cx="378" cy="50" r="5"/></g>
-    <g fill="#94A3B8" font-family="Arial, sans-serif" font-size="12" text-anchor="middle"><text x="18" y="88">REQUIRE</text><text x="108" y="88">SOURCE</text><text x="198" y="88">DECIDE</text><text x="288" y="88">DELIVER</text><text x="378" y="88">LEARN</text></g>
-  </g>
+  <desc id="desc">Editorial black and ivory identity for an intelligent procurement agent.</desc>
+  <rect width="1280" height="440" rx="18" fill="#11110F"/>
+  <path d="M0 348H1280" stroke="#34342F"/>
+  <path d="M918 0V440" stroke="#34342F"/>
+  <text x="64" y="74" fill="#9D9D91" font-family="Arial, sans-serif" font-size="15" letter-spacing="4">OPEN PROCUREMENT INTELLIGENCE</text>
+  <text x="64" y="204" fill="#F1F0E8" font-family="Arial, sans-serif" font-size="76" font-weight="700" letter-spacing="-2">SUPPLY CHAIN</text>
+  <text x="64" y="282" fill="#F1F0E8" font-family="Arial, sans-serif" font-size="76" font-weight="700" letter-spacing="-2">EXPERT</text>
+  <text x="64" y="389" fill="#A8A89D" font-family="Arial, sans-serif" font-size="18">WORKFLOW / INTELLIGENCE / CONTROL / MEMORY</text>
+  <text x="1100" y="92" fill="#F1F0E8" font-family="Arial, sans-serif" font-size="72" font-weight="700">SCE</text>
+  <text x="1098" y="126" fill="#9D9D91" font-family="Arial, sans-serif" font-size="14" letter-spacing="3">SYSTEM 01</text>
+  <circle cx="1098" cy="236" r="86" fill="none" stroke="#D6FF3F" stroke-width="2"/>
+  <circle cx="1098" cy="236" r="7" fill="#D6FF3F"/>
+  <path d="M1012 236H1184M1098 150V322" stroke="#D6FF3F" stroke-width="1" opacity=".55"/>
+  <text x="1008" y="389" fill="#D6FF3F" font-family="Arial, sans-serif" font-size="14" letter-spacing="2">HUMAN DECISION LAYER</text>
 </svg>
